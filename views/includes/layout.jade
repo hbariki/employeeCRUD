@@ -1,0 +1,17 @@
+head
+    base(href="/")
+    title This is home page
+    link(href="/css/lib/bootstrap.css" rel="stylesheet")
+    link(href="/dist/css/client-bundle.css" rel="styleSheet")
+
+
+body.container(ng-app="employeeApp")
+    h1.page-header Employee Management
+    block main-content
+
+    script(src="/js/lib/jquery.min.js" type="text/javascript")
+    script(src="/js/lib/angular.js" type="text/javascript")
+    script(src="/js/lib/angular-resource.js" type="text/javascript")
+    script(src="/js/lib/angular-route.js" type="text/javascript")
+    script(src="/js/lib/bootstrap.js" type="text/javascript")
+    script(src="/dist/js/client-bundle.js" type="text/javascript")

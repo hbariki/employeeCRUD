@@ -1,0 +1,1 @@
+A simple Employee CRUD application powered with the amazing node.js + AngularJS + Express.js + PostGreSQL

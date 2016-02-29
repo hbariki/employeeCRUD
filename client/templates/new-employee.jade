@@ -1,0 +1,24 @@
+form.form-horizontal.col-md-8.col-md-offset-3(method="POST", name="newEmployeeForm", ng-submit="addNewEmployee(newEmployeeForm.$invalid)" novalidate)
+    .form-group
+        .col-md-2
+            label(for="name") Full Name
+        .col-md-5
+            input.form-control(type="text", id="fullName", placeholder="Enter your full name here...", ng-model="name", name="name" required)
+        .col-md-5
+            span.field-validation-error(ng-show='newEmployeeForm.name.$error.required') is required
+    .form-group
+        .col-md-2
+            label(for="email") Email
+        .col-md-5
+            input.form-control(type="email", id="email", placeholder="Enter your email here...", name="email", ng-model="email" required)
+        .col-md-5
+            span.field-validation-error(ng-show='newEmployeeForm.email.$error.required') is required
+    .form-group
+        .col-md-2
+            label(for="phone") Phone
+        .col-md-5
+            input.form-control(type="text", id="phone", placeholder="Enter your phone number here...", ng-model="phone", name="phone" required)
+        .col-md-5
+            span.field-validation-error(ng-show='newEmployeeForm.phone.$error.required') is required
+    .form-group
+        input.btn.btn-primary.col-md-offset-4(type="submit", name="Add employee")

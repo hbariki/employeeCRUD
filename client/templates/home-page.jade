@@ -1,0 +1,54 @@
+table.table
+   thead
+      th ID
+      th Name
+      th Phone
+      th Email
+      th
+   tr(ng-repeat='employee in employees')
+      td {{employee.id}}
+      td {{employee.name}}
+      td {{employee.phone}}
+      td {{employee.email}}
+      td
+         .col-md-2
+            button.btn.btn-primary(data-toggle="modal", data-target="#employeeModal", ng-click="initUpdateModal(employee)") Update
+         .col-md-1
+         .col-md-2
+            button.btn.btn-danger(ng-click="deleteEmployee(employee.id)") Delete
+.row
+   .col-md-4.col-md-offset-8
+      a.btn.btn-success.btn-lg(value='Add New Employee', href="/newEmployee") Add New Employee
+
+.modal.fade#employeeModal(tabindex=-1, role="dialog", aria-labelledby="employeeModalLabel")
+   .modal-dialog(role="document")
+      .modal-content
+         .modal-header
+            button.close(type="button", data-dismiss="modal", aria-label="Close")
+               span(aria-hidden="true") &times
+            h4.modal-title#employeeModalLabel Employee Details
+         .modal-body
+            form.form-horizontal.col-md-11.col-md-offset-1(method="POST", name="updateEmployeeForm", ng-submit="updateEmployee(updateEmployeeForm.$invalid)" novalidate)
+               .form-group
+                  .col-md-3
+                     label(for="name") Full Name
+                  .col-md-5
+                     input.form-control(type="text", id="fullName", placeholder="Enter your full name here...", ng-model="name", name="name" required)
+                  .col-md-4
+                     span.field-validation-error(ng-show='updateEmployeeForm.name.$error.required') is required
+               .form-group
+                  .col-md-3
+                     label(for="email") Email
+                  .col-md-5
+                     input.form-control(type="email", id="email", placeholder="Enter your email here...", name="email", ng-model="email" required)
+                  .col-md-4
+                     span.field-validation-error(ng-show='updateEmployeeForm.email.$error.required') is required
+               .form-group
+                  .col-md-3
+                     label(for="phone") Phone
+                  .col-md-5
+                     input.form-control(type="text", id="phone", placeholder="Enter your phone number here...", ng-model="phone", name="phone" required)
+                  .col-md-4
+                     span.field-validation-error(ng-show='updateEmployeeForm.phone.$error.required') is required
+               .form-group
+                  input.btn.btn-primary.col-md-offset-4(type="submit", name="Update employee", value="Update employee")

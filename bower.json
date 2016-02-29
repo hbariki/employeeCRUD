@@ -1,0 +1,28 @@
+{
+  "name": "EmployeeApp",
+  "description": "A simple Employee CRUD application powered with the amazing node.js + AngularJS + Express.js + PostGreSQL",
+  "main": "server.js",
+  "authors": [
+    "Harshini"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "employee"
+  ],
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-resource": "^1.5.0",
+    "angular-route": "^1.5.0",
+    "bootstrap": "^3.3.6",
+    "angular": "^1.5.0"
+  }
+}
